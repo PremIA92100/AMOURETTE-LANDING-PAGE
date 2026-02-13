@@ -2,6 +2,15 @@ import { content } from '../data/content';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+const easeOutExpo = [0.16, 1, 0.3, 1];
+
+const contactItems = [
+    { icon: MapPin, title: "Adresse", key: "address" },
+    { icon: Phone, title: "Téléphone", key: "phone", href: "tel:0952861447" },
+    { icon: Mail, title: "Email", key: "email", href: "mailto:contact@amourette-passy.fr" },
+    { icon: Clock, title: "Horaires", key: "hours" },
+];
+
 const Contact = () => {
     return (
         <section id="contact" className="py-24 pb-40 md:pb-24 bg-paper relative">
@@ -11,68 +20,85 @@ const Contact = () => {
                     {/* Text Content */}
                     <div className="space-y-12">
                         <div>
-                            <span className="text-amourette text-sm font-bold uppercase tracking-[0.2em] mb-4 block">
+                            <motion.span
+                                initial={{ opacity: 0, y: 15 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={{ duration: 0.5, ease: easeOutExpo }}
+                                className="text-amourette text-sm font-bold uppercase tracking-[0.2em] mb-4 block"
+                            >
                                 Infos Pratiques
-                            </span>
-                            <h2 className="text-4xl md:text-6xl font-serif text-stone-900 mb-8">
+                            </motion.span>
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={{ duration: 0.8, delay: 0.1, ease: easeOutExpo }}
+                                className="text-4xl md:text-6xl font-serif text-stone-900 mb-8"
+                            >
                                 Nous Contacter
-                            </h2>
-                            <p className="text-stone-500 text-lg font-light leading-relaxed">
+                            </motion.h2>
+                            <motion.p
+                                initial={{ opacity: 0, y: 15 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={{ duration: 0.5, delay: 0.2, ease: easeOutExpo }}
+                                className="text-stone-500 text-lg font-light leading-relaxed"
+                            >
                                 Pour toute demande d'événement privatisé ou de groupe de plus de 8 personnes, n'hésitez pas à nous contacter directement.
-                            </p>
+                            </motion.p>
                         </div>
 
                         <div className="space-y-8">
-                            <div className="flex items-start space-x-6 group">
-                                <div className="p-4 rounded-full border border-stone-200 text-amourette group-hover:bg-amourette group-hover:text-white transition-colors duration-300">
-                                    <MapPin size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-stone-900 text-xl font-serif mb-2">Adresse</h4>
-                                    <p className="text-stone-500">{content.contact.address}</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start space-x-6 group">
-                                <div className="p-4 rounded-full border border-stone-200 text-amourette group-hover:bg-amourette group-hover:text-white transition-colors duration-300">
-                                    <Phone size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-stone-900 text-xl font-serif mb-2">Téléphone</h4>
-                                    <a href="tel:0952861447" className="text-stone-500 hover:text-amourette transition-colors">{content.contact.phone}</a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start space-x-6 group">
-                                <div className="p-4 rounded-full border border-stone-200 text-amourette group-hover:bg-amourette group-hover:text-white transition-colors duration-300">
-                                    <Mail size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-stone-900 text-xl font-serif mb-2">Email</h4>
-                                    <a href="mailto:contact@amourette-passy.fr" className="text-stone-500 hover:text-amourette transition-colors">{content.contact.email}</a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start space-x-6 group">
-                                <div className="p-4 rounded-full border border-stone-200 text-amourette group-hover:bg-amourette group-hover:text-white transition-colors duration-300">
-                                    <Clock size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-stone-900 text-xl font-serif mb-2">Horaires</h4>
-                                    <p className="text-stone-500">{content.contact.hours}</p>
-                                </div>
-                            </div>
+                            {contactItems.map((item, i) => {
+                                const Icon = item.icon;
+                                const value = content.contact[item.key];
+                                return (
+                                    <motion.div
+                                        key={item.key}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, amount: 0.2 }}
+                                        transition={{ duration: 0.5, delay: 0.3 + (i * 0.1), ease: easeOutExpo }}
+                                        className="flex items-start space-x-6 group"
+                                    >
+                                        <div className="p-4 rounded-full border border-stone-200 text-amourette group-hover:bg-amourette group-hover:text-white transition-colors duration-300">
+                                            <Icon size={24} />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-stone-900 text-xl font-serif mb-2">{item.title}</h4>
+                                            {item.href ? (
+                                                <a href={item.href} className="text-stone-500 hover:text-amourette transition-colors">{value}</a>
+                                            ) : (
+                                                <p className="text-stone-500">{value}</p>
+                                            )}
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
 
-                        <div className="pt-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.5, delay: 0.7, ease: easeOutExpo }}
+                            className="pt-8"
+                        >
                             <button className="w-full md:w-auto px-10 py-4 bg-stone-900 text-white font-bold uppercase tracking-widest hover:bg-amourette transition-colors duration-300">
                                 Réserver une table
                             </button>
-                        </div>
+                        </motion.div>
                     </div>
 
                     {/* Google Maps */}
-                    <div className="relative h-[600px] w-full overflow-hidden rounded-lg border border-stone-200">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: easeOutExpo }}
+                        className="relative h-[600px] w-full overflow-hidden rounded-lg border border-stone-200"
+                    >
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.8!2d2.2785!3d48.8575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6700469694f73%3A0x6e3a5d1c8e8c8a0!2s10%20Bd%20Delessert%2C%2075016%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000"
                             width="100%"
@@ -83,7 +109,7 @@ const Contact = () => {
                             referrerPolicy="no-referrer-when-downgrade"
                             title="Amourette Passy - Google Maps"
                         />
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

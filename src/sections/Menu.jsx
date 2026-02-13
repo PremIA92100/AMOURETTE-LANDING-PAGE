@@ -4,6 +4,8 @@ import Magnetic from '../components/Magnetic';
 import { SplitText } from '../components/SplitText';
 import { content } from '../data/content';
 
+const easeOutExpo = [0.16, 1, 0.3, 1];
+
 const categories = [
     { key: 'partager', label: 'À Partager' },
     { key: 'entrees', label: 'Entrées' },
@@ -21,9 +23,10 @@ const Menu = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.span
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5, ease: easeOutExpo }}
                         className="text-amourette text-xs md:text-sm font-bold uppercase tracking-[0.5em] mb-8 block"
                     >
                         Cuisine de Partage
@@ -38,7 +41,8 @@ const Menu = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.2, ease: easeOutExpo }}
                         className="text-stone-600 text-xl md:text-2xl font-light leading-relaxed mb-16 max-w-3xl mx-auto"
                     >
                         Une cuisine sincère et vivante, qui évolue au gré des saisons et des arrivages.
@@ -48,9 +52,10 @@ const Menu = () => {
 
                 {/* Tabs */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: easeOutExpo }}
                     className="max-w-4xl mx-auto mb-12"
                 >
                     <div className="flex overflow-x-auto scrollbar-hide gap-2 md:gap-4 justify-center pb-2">
@@ -58,7 +63,7 @@ const Menu = () => {
                             <button
                                 key={cat.key}
                                 onClick={() => setActiveTab(cat.key)}
-                                className={`px-5 py-2.5 md:px-8 md:py-3 text-xs md:text-sm uppercase tracking-widest font-medium whitespace-nowrap rounded-full border transition-all duration-300 ${
+                                className={`relative px-5 py-2.5 md:px-8 md:py-3 text-xs md:text-sm uppercase tracking-widest font-medium whitespace-nowrap rounded-full border transition-all duration-500 ${
                                     activeTab === cat.key
                                         ? 'bg-amourette text-white border-amourette'
                                         : 'bg-transparent text-stone-500 border-stone-300 hover:border-amourette hover:text-amourette'
@@ -75,10 +80,10 @@ const Menu = () => {
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeTab}
-                            initial={{ opacity: 0, y: 10 }}
+                            initial={{ opacity: 0, y: 15 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.4, ease: easeOutExpo }}
                             className="divide-y divide-stone-200"
                         >
                             {content.menu[activeTab].map((item, index) => (
@@ -86,7 +91,7 @@ const Menu = () => {
                                     key={item.name}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                                    transition={{ duration: 0.3, delay: index * 0.05, ease: easeOutExpo }}
                                     className="flex justify-between items-baseline py-5 group"
                                 >
                                     <span className="text-stone-800 font-serif text-lg md:text-xl group-hover:text-amourette transition-colors duration-300 pr-4">
@@ -105,7 +110,8 @@ const Menu = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: easeOutExpo }}
                     className="flex flex-col items-center mt-16"
                 >
                     <Magnetic>

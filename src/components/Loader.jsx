@@ -1,19 +1,21 @@
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+
+const easeOutExpo = [0.16, 1, 0.3, 1];
 
 const Loader = ({ onLoadingComplete }) => {
     return (
         <motion.div
             initial={{ y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.8, ease: easeOutExpo }}
             className="fixed inset-0 z-[999] bg-[#FDFCF8] flex items-center justify-center pointer-events-none"
         >
             <div className="relative overflow-hidden p-10 text-center">
                 <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     className="mb-6"
                 >
                     <span className="text-amourette text-xs font-bold uppercase tracking-[0.4em]">Paris 16ème</span>

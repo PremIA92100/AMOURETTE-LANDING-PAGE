@@ -17,6 +17,8 @@ const ZenchefWidget = () => {
         <div
             className="zc-widget-config"
             data-restaurant="355141"
+            data-lang="fr"
+            data-primary-color="#67A89A"
         ></div>
     );
 };
