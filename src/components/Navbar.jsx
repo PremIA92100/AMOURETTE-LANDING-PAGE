@@ -49,7 +49,9 @@ const Navbar = () => {
                             </a>
                         ))}
                         <Magnetic>
-                            <button className={`px-6 py-2 border uppercase text-xs tracking-widest font-bold transition-all duration-300 ${isScrolled
+                            <button
+                                onClick={() => window.zenchef?.open?.()}
+                                className={`px-6 py-2 border uppercase text-xs tracking-widest font-bold transition-all duration-300 ${isScrolled
                                 ? 'border-amourette text-amourette hover:bg-amourette hover:text-white'
                                 : 'border-white text-white hover:bg-white hover:text-stone-900'
                                 }`}>
@@ -89,7 +91,10 @@ const Navbar = () => {
                                 {link.name}
                             </a>
                         ))}
-                        <button className="px-8 py-3 bg-amourette text-white font-bold uppercase tracking-widest mt-8">
+                        <button
+                            onClick={() => { setIsMobileMenuOpen(false); window.zenchef?.open?.(); }}
+                            className="px-8 py-3 bg-amourette text-white font-bold uppercase tracking-widest mt-8"
+                        >
                             Réserver une table
                         </button>
                     </motion.div>

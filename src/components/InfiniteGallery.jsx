@@ -29,7 +29,7 @@ const InfiniteGallery = () => {
                 >
                     {galleryImages.map((src, index) => (
                         <div key={`g1-${index}`} className="relative w-[300px] h-[350px] md:w-[600px] md:h-[700px] flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden grayscale-[0.5] hover:grayscale-0 transition-all duration-500">
-                            <img src={src} alt="Amourette atmosphere" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
+                            <img src={src} alt="Amourette atmosphere" loading="lazy" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
                         </div>
                     ))}
                 </motion.div>
@@ -45,7 +45,7 @@ const InfiniteGallery = () => {
                 >
                     {galleryImages.map((src, index) => (
                         <div key={`g2-${index}`} className="relative w-[300px] h-[350px] md:w-[600px] md:h-[700px] flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden grayscale-[0.5] hover:grayscale-0 transition-all duration-500">
-                            <img src={src} alt="Amourette atmosphere" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
+                            <img src={src} alt="Amourette atmosphere" loading="lazy" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" />
                         </div>
                     ))}
                 </motion.div>

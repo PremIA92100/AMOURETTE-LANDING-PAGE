@@ -39,7 +39,17 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-stone-900 text-xl font-serif mb-2">Téléphone</h4>
-                                    <p className="text-stone-500">{content.contact.phone}</p>
+                                    <a href="tel:0952861447" className="text-stone-500 hover:text-amourette transition-colors">{content.contact.phone}</a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start space-x-6 group">
+                                <div className="p-4 rounded-full border border-stone-200 text-amourette group-hover:bg-amourette group-hover:text-white transition-colors duration-300">
+                                    <Mail size={24} />
+                                </div>
+                                <div>
+                                    <h4 className="text-stone-900 text-xl font-serif mb-2">Email</h4>
+                                    <a href="mailto:contact@amourette-passy.fr" className="text-stone-500 hover:text-amourette transition-colors">{content.contact.email}</a>
                                 </div>
                             </div>
 
@@ -61,15 +71,18 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Map / Image Placeholder */}
-                    <div className="relative h-[600px] w-full overflow-hidden rounded-lg border border-stone-200 grayscale hover:grayscale-0 transition-all duration-700">
-                        {/* Ideally a Google Map iframe here, using a placeholder image for now */}
-                        <img
-                            src="/images/devanture-vegetalisee.webp"
-                            alt="Amourette Façade Végétalisée"
-                            className="w-full h-full object-cover"
+                    {/* Google Maps */}
+                    <div className="relative h-[600px] w-full overflow-hidden rounded-lg border border-stone-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.8!2d2.2785!3d48.8575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6700469694f73%3A0x6e3a5d1c8e8c8a0!2s10%20Bd%20Delessert%2C%2075016%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Amourette Passy - Google Maps"
                         />
-                        <div className="absolute inset-0 bg-stone-900/10 pointer-events-none" />
                     </div>
 
                 </div>

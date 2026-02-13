@@ -38,7 +38,7 @@ function App() {
     // Simulate loading time (assets etc)
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => {
       lenis.destroy();

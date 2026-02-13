@@ -66,7 +66,16 @@ const Hero = () => {
                     className="flex justify-center"
                 >
                     <Magnetic>
-                        <button className="px-10 py-4 bg-amourette text-white text-sm font-bold uppercase tracking-widest hover:bg-stone-900 transition-all duration-300 backdrop-blur-sm">
+                        <button
+                            onClick={() => {
+                                if (window.zenchef?.open) {
+                                    window.zenchef.open();
+                                } else {
+                                    document.getElementById('zenchef-widget')?.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                            className="px-10 py-4 bg-amourette text-white text-sm font-bold uppercase tracking-widest hover:bg-stone-900 transition-all duration-300 backdrop-blur-sm"
+                        >
                             {content.hero.cta}
                         </button>
                     </Magnetic>
