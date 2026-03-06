@@ -57,6 +57,37 @@ const menuData: Record<string, { name: string; price: string }[]> = {
   ],
 }
 
+function MenuItem({ item, index }: { item: { name: string; price: string }; index: number }) {
+  return (
+    <motion.div
+      key={item.name}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.3,
+        delay: index * 0.05,
+        ease: easeOutExpo,
+      }}
+      className="group relative py-5 cursor-default"
+    >
+      <div className="flex justify-between items-baseline">
+        <span className="text-stone-800 font-serif text-lg md:text-xl group-hover:text-amourette transition-colors duration-300 pr-4">
+          {item.name}
+        </span>
+        <span className="text-stone-500 text-sm md:text-base font-light whitespace-nowrap overflow-hidden">
+          <span className="inline-block transition-transform duration-300 group-hover:translate-x-0 translate-x-4 group-hover:opacity-100 opacity-70">
+            {item.price}
+          </span>
+        </span>
+      </div>
+      {/* Animated underline on hover */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-stone-200">
+        <div className="h-full bg-amourette origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+      </div>
+    </motion.div>
+  )
+}
+
 export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
   const [activeTab, setActiveTab] = useState('partager')
 
@@ -124,27 +155,9 @@ export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4, ease: easeOutExpo }}
-              className="divide-y divide-stone-200"
             >
               {menuData[activeTab].map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.05,
-                    ease: easeOutExpo,
-                  }}
-                  className="flex justify-between items-baseline py-5 group"
-                >
-                  <span className="text-stone-800 font-serif text-lg md:text-xl group-hover:text-amourette transition-colors duration-300 pr-4">
-                    {item.name}
-                  </span>
-                  <span className="text-stone-500 text-sm md:text-base font-light whitespace-nowrap">
-                    {item.price}
-                  </span>
-                </motion.div>
+                <MenuItem key={item.name} item={item} index={index} />
               ))}
             </motion.div>
           </AnimatePresence>

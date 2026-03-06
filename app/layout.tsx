@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { restaurantSchema, websiteSchema } from '@/lib/schema'
 import { getAlternatesForMetadata } from '@/lib/hreflang'
+import LoaderWrapper from '@/components/Loader'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -54,7 +55,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-paper text-stone-900 min-h-screen font-sans antialiased">
-        {children}
+        <LoaderWrapper>{children}</LoaderWrapper>
       </body>
     </html>
   )
