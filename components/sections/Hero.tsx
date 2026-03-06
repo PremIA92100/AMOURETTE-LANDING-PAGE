@@ -47,7 +47,7 @@ export default function Hero({ locale = 'fr' }: { locale?: string }) {
           Paris 16eme
         </motion.span>
 
-        <h1 className="text-6xl md:text-9xl lg:text-[10rem] font-serif text-white leading-none tracking-tight drop-shadow-lg">
+        <h1 className="text-5xl md:text-9xl lg:text-[10rem] font-serif text-white leading-none tracking-tight drop-shadow-lg">
           <span className="block overflow-hidden">
             <motion.span
               initial={{ y: '110%' }}

@@ -70,19 +70,16 @@ function MenuItem({ item, index }: { item: { name: string; price: string }; inde
       }}
       className="group relative py-5 cursor-default"
     >
-      <div className="flex justify-between items-baseline">
-        <span className="text-stone-800 font-serif text-lg md:text-xl group-hover:text-amourette transition-colors duration-300 pr-4">
+      <div className="flex justify-between items-baseline w-full gap-4">
+        <span className="text-stone-800 font-serif text-base md:text-xl md:group-hover:text-amourette transition-colors duration-300">
           {item.name}
         </span>
-        <span className="text-stone-500 text-sm md:text-base font-light whitespace-nowrap overflow-hidden">
-          <span className="inline-block transition-transform duration-300 group-hover:translate-x-0 translate-x-4 group-hover:opacity-100 opacity-70">
-            {item.price}
-          </span>
+        <span className="text-stone-500 text-sm md:text-base font-light whitespace-nowrap shrink-0 opacity-100 md:opacity-70 md:group-hover:opacity-100 transition-opacity duration-300">
+          {item.price}
         </span>
       </div>
-      {/* Animated underline on hover */}
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-stone-200">
-        <div className="h-full bg-amourette origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+        <div className="h-full bg-amourette origin-left scale-x-0 md:group-hover:scale-x-100 transition-transform duration-300 ease-out" />
       </div>
     </motion.div>
   )
@@ -92,7 +89,7 @@ export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
   const [activeTab, setActiveTab] = useState('partager')
 
   return (
-    <section className="py-32 bg-paper relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-paper relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-stone-100/40 via-paper to-paper" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -107,7 +104,7 @@ export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
             Cuisine de Partage
           </motion.span>
 
-          <h2 className="text-5xl md:text-8xl font-serif text-stone-900 mb-16">
+          <h2 className="text-4xl md:text-8xl font-serif text-stone-900 mb-12 md:mb-16">
             La Carte
           </h2>
 
@@ -116,7 +113,7 @@ export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.2, ease: easeOutExpo }}
-            className="text-stone-600 text-xl md:text-2xl font-light leading-relaxed mb-16 max-w-3xl mx-auto"
+            className="text-stone-600 text-lg md:text-2xl font-light leading-relaxed mb-12 md:mb-16 max-w-3xl mx-auto"
           >
             Une cuisine sincere et vivante, qui evolue au gre des saisons et
             des arrivages.
@@ -135,10 +132,10 @@ export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
               <button
                 key={cat.key}
                 onClick={() => setActiveTab(cat.key)}
-                className={`relative px-5 py-2.5 md:px-8 md:py-3 text-xs md:text-sm uppercase tracking-widest font-medium whitespace-nowrap rounded-full border transition-all duration-500 ${
+                className={`relative px-5 py-2.5 md:px-8 md:py-3 min-h-[44px] text-xs md:text-sm uppercase tracking-widest font-medium whitespace-nowrap rounded-full border transition-all duration-500 ${
                   activeTab === cat.key
                     ? 'bg-amourette text-white border-amourette'
-                    : 'bg-transparent text-stone-500 border-stone-300 hover:border-amourette hover:text-amourette'
+                    : 'bg-transparent text-stone-500 border-stone-300 md:hover:border-amourette md:hover:text-amourette'
                 }`}
               >
                 {cat.label}
@@ -168,16 +165,16 @@ export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, delay: 0.3, ease: easeOutExpo }}
-          className="flex flex-col items-center mt-16"
+          className="flex flex-col items-center mt-12 md:mt-16"
         >
           <Link
             href={slugMap.menus[locale]}
-            className="group inline-flex items-center gap-4 px-8 py-5 md:px-12 md:py-6 bg-stone-900 text-paper rounded-full hover:bg-amourette transition-all duration-500 shadow-xl hover:shadow-amourette/20"
+            className="group inline-flex items-center gap-4 px-8 py-5 md:px-12 md:py-6 min-h-[44px] bg-stone-900 text-paper rounded-full md:hover:bg-amourette transition-all duration-500 shadow-xl md:hover:shadow-amourette/20"
           >
             <span className="uppercase tracking-widest text-sm font-medium">
               {locale === 'fr' ? 'Voir la carte complete' : 'See full menu'}
             </span>
-            <span className="group-hover:translate-x-1 transition-transform duration-300">
+            <span className="md:group-hover:translate-x-1 transition-transform duration-300">
               &rarr;
             </span>
           </Link>

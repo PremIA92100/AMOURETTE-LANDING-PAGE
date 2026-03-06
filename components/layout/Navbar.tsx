@@ -99,7 +99,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden transition-colors ${
+            className={`md:hidden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center ${
               isScrolled ? 'text-stone-900' : 'text-white'
             }`}
           >
@@ -121,7 +121,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-2xl font-serif text-stone-600 hover:text-amourette transition-colors"
+                className="text-2xl font-serif text-stone-600 min-h-[44px] flex items-center"
               >
                 {link.name}
               </Link>
@@ -129,7 +129,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
             <Link
               href={reservationHref}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-8 py-3 bg-amourette text-white font-bold uppercase tracking-widest mt-8"
+              className="px-8 py-4 min-h-[44px] bg-amourette text-white font-bold uppercase tracking-widest mt-8"
             >
               {locale === 'fr' ? 'Reserver une table' : 'Book a table'}
             </Link>

@@ -34,27 +34,77 @@ function WordReveal({ words, isInView }: { words: string[]; isInView: boolean })
   )
 }
 
+const cardData = [
+  {
+    title: 'Terroir',
+    subtitle: 'Produits frais et sources',
+    desc: 'Nous privilegions les circuits courts et la qualite brute.',
+  },
+  {
+    title: 'Partage',
+    subtitle: 'Une cuisine de coeur',
+    desc: 'Des plats penses pour etre partages et celebres ensemble.',
+  },
+  {
+    title: 'Vins',
+    subtitle: 'Selection Pointue',
+    desc: "Une carte de vins natures et vivants pour accompagner chaque instant.",
+  },
+]
+
+function AboutCard({ item }: { item: typeof cardData[number] }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: easeOutExpo }}
+      className="border-t border-stone-200 pt-6"
+    >
+      <motion.div
+        className="h-[1px] bg-amourette origin-left mb-4"
+        initial={{ scaleX: 0 }}
+        animate={isInView ? { scaleX: 1 } : {}}
+        transition={{ duration: 0.8, delay: 0.2, ease: easeOutExpo }}
+      />
+      <h4 className="text-amourette font-serif text-2xl mb-2">
+        {item.title}
+      </h4>
+      <span className="text-xs uppercase tracking-widest text-stone-400 block mb-3">
+        {item.subtitle}
+      </span>
+      <p className="text-stone-500 text-base leading-relaxed">
+        {item.desc}
+      </p>
+    </motion.div>
+  )
+}
+
 export default function About() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="py-24 md:py-32 bg-paper relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-paper relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div
           ref={ref}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start"
         >
+          {/* Left column: image + title */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <motion.span
               initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, ease: easeOutExpo }}
-              className="text-amourette text-xs font-bold uppercase tracking-[0.5em] mb-10 block"
+              className="text-amourette text-xs font-bold uppercase tracking-[0.5em] mb-8 md:mb-10 block"
             >
               Notre Histoire
             </motion.span>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl mb-8">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 md:mb-8">
               <motion.div
                 initial={{
                   clipPath: 'inset(50% 50% 50% 50% round 12px)',
@@ -76,7 +126,7 @@ export default function About() {
                 />
               </motion.div>
             </div>
-            <h2 className="text-5xl md:text-7xl font-serif text-stone-900 leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-stone-900 leading-[1.1]">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: '100%' }}
@@ -108,8 +158,8 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="lg:col-span-7 space-y-16 mt-12 lg:mt-32">
-            {/* Decorative line that extends on scroll */}
+          {/* Right column: text + cards */}
+          <div className="lg:col-span-7 space-y-12 md:space-y-16 mt-8 lg:mt-32">
             <motion.div
               className="h-[1px] bg-amourette/30 origin-left"
               initial={{ scaleX: 0 }}
@@ -117,11 +167,10 @@ export default function About() {
               transition={{ duration: 1.2, delay: 0.3, ease: easeOutExpo }}
             />
 
-            <div className="text-xl md:text-2xl text-stone-600 font-light leading-relaxed">
+            <div className="text-lg md:text-2xl text-stone-600 font-light leading-relaxed">
               <WordReveal words={aboutWords} isInView={isInView} />
             </div>
 
-            {/* Decorative line */}
             <motion.div
               className="h-[1px] bg-stone-200 origin-right"
               initial={{ scaleX: 0 }}
@@ -129,51 +178,10 @@ export default function About() {
               transition={{ duration: 1, delay: 1.2, ease: easeOutExpo }}
             />
 
+            {/* Cards - each triggers independently */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'Terroir',
-                  subtitle: 'Produits frais et sources',
-                  desc: 'Nous privilegions les circuits courts et la qualite brute.',
-                },
-                {
-                  title: 'Partage',
-                  subtitle: 'Une cuisine de coeur',
-                  desc: 'Des plats penses pour etre partages et celebres ensemble.',
-                },
-                {
-                  title: 'Vins',
-                  subtitle: 'Selection Pointue',
-                  desc: "Une carte de vins natures et vivants pour accompagner chaque instant.",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 25 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{
-                    duration: 0.5,
-                    delay: 1.4 + i * 0.15,
-                    ease: easeOutExpo,
-                  }}
-                  className="border-t border-stone-200 pt-6"
-                >
-                  <motion.div
-                    className="h-[1px] bg-amourette origin-left mb-4"
-                    initial={{ scaleX: 0 }}
-                    animate={isInView ? { scaleX: 1 } : {}}
-                    transition={{ duration: 0.8, delay: 1.6 + i * 0.15, ease: easeOutExpo }}
-                  />
-                  <h4 className="text-amourette font-serif text-2xl mb-2">
-                    {item.title}
-                  </h4>
-                  <span className="text-xs uppercase tracking-widest text-stone-400 block mb-3">
-                    {item.subtitle}
-                  </span>
-                  <p className="text-stone-500 text-sm leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
+              {cardData.map((item) => (
+                <AboutCard key={item.title} item={item} />
               ))}
             </div>
           </div>

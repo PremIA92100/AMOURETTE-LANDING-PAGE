@@ -17,10 +17,47 @@ const galleryImages = [
   { src: '/images/amourette-640406.jpg', alt: 'Amourette Paris Passy - Decoration', label: 'Decoration' },
 ]
 
+function GalleryImage({
+  src,
+  alt,
+  label,
+  className,
+  sizes,
+}: {
+  src: string
+  alt: string
+  label: string
+  className: string
+  sizes: string
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.7, ease: easeOutExpo }}
+      className={`relative overflow-hidden rounded-lg group ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover md:transition-transform md:duration-700 md:group-hover:scale-[1.02]"
+        sizes={sizes}
+      />
+      <div className="absolute inset-0 hidden md:flex bg-black/0 group-hover:bg-black/30 transition-all duration-500 items-end p-6">
+        <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+          {label}
+        </span>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function GallerySection({ locale = 'fr' }: { locale?: Locale }) {
   return (
-    <section className="relative bg-stone-950 text-white py-24 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-6 mb-16 md:mb-24 text-center">
+    <section className="relative bg-stone-950 text-white py-20 md:py-32 overflow-hidden">
+      <div className="container mx-auto px-6 mb-12 md:mb-24 text-center">
         <motion.span
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,199 +93,74 @@ export default function GallerySection({ locale = 'fr' }: { locale?: Locale }) {
         </h2>
       </div>
 
-      {/* Masonry / Asymmetric layout */}
-      <div className="px-4 md:px-8 max-w-7xl mx-auto">
-        {/* Row 1: 1 large (span 2) + 1 small */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, ease: easeOutExpo }}
-            className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-lg group"
-          >
-            <Image
-              src={galleryImages[0].src}
-              alt={galleryImages[0].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 66vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6 md:p-8">
-              <span className="text-white/0 group-hover:text-white text-sm md:text-base uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                {galleryImages[0].label}
-              </span>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: easeOutExpo }}
-            className="relative aspect-[3/4] md:aspect-auto overflow-hidden rounded-lg group hidden md:block"
-          >
-            <Image
-              src={galleryImages[1].src}
-              alt={galleryImages[1].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="33vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6">
-              <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                {galleryImages[1].label}
-              </span>
-            </div>
-          </motion.div>
+      {/* Mobile: single column, full width, 8px gap */}
+      <div className="px-4 md:hidden flex flex-col gap-2">
+        {galleryImages.map((img) => (
+          <GalleryImage
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            label={img.label}
+            className="aspect-[4/3] w-full"
+            sizes="100vw"
+          />
+        ))}
+      </div>
+
+      {/* Desktop: asymmetric masonry */}
+      <div className="hidden md:block px-8 max-w-7xl mx-auto">
+        {/* Row 1: 1 large + 2 small */}
+        <div className="grid grid-cols-3 gap-6 mb-6">
+          <GalleryImage
+            src={galleryImages[0].src}
+            alt={galleryImages[0].alt}
+            label={galleryImages[0].label}
+            className="col-span-2 aspect-[16/9]"
+            sizes="66vw"
+          />
+          <GalleryImage
+            src={galleryImages[1].src}
+            alt={galleryImages[1].alt}
+            label={galleryImages[1].label}
+            className="aspect-[16/9]"
+            sizes="33vw"
+          />
         </div>
 
-        {/* Row 2: 2 small + 1 large (on mobile: just 2 cols) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, ease: easeOutExpo }}
-            className="relative aspect-[4/5] overflow-hidden rounded-lg group"
-          >
-            <Image
-              src={galleryImages[1].src}
-              alt={galleryImages[1].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 md:hidden"
-              sizes="50vw"
-            />
-            <Image
-              src={galleryImages[2].src}
-              alt={galleryImages[2].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 hidden md:block"
-              sizes="33vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6">
-              <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                {galleryImages[2].label}
-              </span>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: easeOutExpo }}
-            className="relative aspect-[4/5] overflow-hidden rounded-lg group md:hidden"
-          >
-            <Image
-              src={galleryImages[2].src}
-              alt={galleryImages[2].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="50vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6">
-              <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                {galleryImages[2].label}
-              </span>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: easeOutExpo }}
-            className="relative aspect-[4/5] overflow-hidden rounded-lg group hidden md:block"
-          >
-            <Image
-              src={galleryImages[3].src}
-              alt={galleryImages[3].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="33vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6">
-              <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                {galleryImages[3].label}
-              </span>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: easeOutExpo }}
-            className="relative col-span-2 md:col-span-1 aspect-[16/9] md:aspect-[4/5] overflow-hidden rounded-lg group hidden md:block"
-          >
-            <Image
-              src={galleryImages[4].src}
-              alt={galleryImages[4].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6">
-              <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                {galleryImages[4].label}
-              </span>
-            </div>
-          </motion.div>
+        {/* Row 2: 2 small + 1 large */}
+        <div className="grid grid-cols-3 gap-6 mb-6">
+          <GalleryImage
+            src={galleryImages[2].src}
+            alt={galleryImages[2].alt}
+            label={galleryImages[2].label}
+            className="aspect-[4/5]"
+            sizes="33vw"
+          />
+          <GalleryImage
+            src={galleryImages[3].src}
+            alt={galleryImages[3].alt}
+            label={galleryImages[3].label}
+            className="col-span-2 aspect-[16/9]"
+            sizes="66vw"
+          />
         </div>
 
-        {/* Row 3: full width cinematic */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, ease: easeOutExpo }}
-            className="relative aspect-[4/3] overflow-hidden rounded-lg group"
-          >
-            <Image
-              src={galleryImages[3].src}
-              alt={galleryImages[3].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 md:hidden"
-              sizes="50vw"
-            />
-            <Image
-              src={galleryImages[5].src}
-              alt={galleryImages[5].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 hidden md:block"
-              sizes="50vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6">
-              <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                {galleryImages[5].label}
-              </span>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: easeOutExpo }}
-            className="relative aspect-[4/3] overflow-hidden rounded-lg group"
-          >
-            <Image
-              src={galleryImages[4].src}
-              alt={galleryImages[4].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 md:hidden"
-              sizes="50vw"
-            />
-            <Image
-              src={galleryImages[0].src}
-              alt={galleryImages[0].alt}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105 hidden md:block"
-              sizes="50vw"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-end p-6">
-              <span className="text-white/0 group-hover:text-white text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                Ambiance
-              </span>
-            </div>
-          </motion.div>
+        {/* Row 3: 2 equal */}
+        <div className="grid grid-cols-2 gap-6">
+          <GalleryImage
+            src={galleryImages[4].src}
+            alt={galleryImages[4].alt}
+            label={galleryImages[4].label}
+            className="aspect-[4/3]"
+            sizes="50vw"
+          />
+          <GalleryImage
+            src={galleryImages[5].src}
+            alt={galleryImages[5].alt}
+            label={galleryImages[5].label}
+            className="aspect-[4/3]"
+            sizes="50vw"
+          />
         </div>
       </div>
 
@@ -257,11 +169,11 @@ export default function GallerySection({ locale = 'fr' }: { locale?: Locale }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5, ease: easeOutExpo }}
-        className="flex justify-center mt-16 md:mt-24 px-6"
+        className="flex justify-center mt-12 md:mt-24 px-6"
       >
         <Link
           href={slugMap.photos[locale]}
-          className="px-10 py-4 bg-amourette text-white font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition-colors duration-500"
+          className="px-10 py-4 min-h-[44px] flex items-center bg-amourette text-white font-bold uppercase tracking-widest md:hover:bg-white md:hover:text-stone-900 transition-colors duration-500"
         >
           {locale === 'fr' ? 'Toutes les photos' : 'All photos'}
         </Link>

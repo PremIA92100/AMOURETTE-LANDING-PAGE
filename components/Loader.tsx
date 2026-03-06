@@ -5,11 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
+const letters = 'Amourette'.split('')
+
 export default function Loader({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000)
+    const timer = setTimeout(() => setIsLoading(false), 2200)
     return () => clearTimeout(timer)
   }, [])
 
@@ -19,26 +21,26 @@ export default function Loader({ children }: { children: React.ReactNode }) {
         {isLoading && (
           <motion.div
             key="loader"
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-dark"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
             exit={{ y: '-100%' }}
-            transition={{ duration: 0.8, ease: easeOutExpo }}
+            transition={{ duration: 0.6, ease: easeOutExpo }}
           >
-            <div className="relative overflow-hidden">
-              <motion.h1
-                className="text-5xl md:text-8xl font-serif text-paper tracking-tight"
-                initial={{ clipPath: 'inset(0 100% 0 0)' }}
-                animate={{ clipPath: 'inset(0 0% 0 0)' }}
-                transition={{ duration: 1.2, delay: 0.3, ease: easeOutExpo }}
-              >
-                Amourette
-              </motion.h1>
-              <motion.div
-                className="absolute bottom-0 left-0 h-[1px] bg-amourette"
-                initial={{ width: 0 }}
-                animate={{ width: '100%' }}
-                transition={{ duration: 1, delay: 0.8, ease: easeOutExpo }}
-              />
-            </div>
+            <h1 className="text-4xl md:text-7xl font-serif text-[#FAF9F6] tracking-tight flex">
+              {letters.map((letter, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3 + i * 0.08,
+                    ease: easeOutExpo,
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </h1>
           </motion.div>
         )}
       </AnimatePresence>
