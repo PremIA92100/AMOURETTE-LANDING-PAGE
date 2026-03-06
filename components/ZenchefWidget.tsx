@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react'
 import type { Locale } from '@/lib/i18n'
 
 export default function ZenchefWidget({ locale = 'fr' }: { locale?: Locale }) {
-  const [sdkFailed, setSdkFailed] = useState(false)
+  const [sdkLoaded, setSdkLoaded] = useState(false)
+
+  const lang = ['fr', 'en', 'de', 'es', 'it', 'pt'].includes(locale) ? locale : 'en'
 
   useEffect(() => {
     // Zenchef SDK injection
@@ -14,22 +16,10 @@ export default function ZenchefWidget({ locale = 'fr' }: { locale?: Locale }) {
       const js = d.createElement(s) as HTMLScriptElement
       js.id = id
       js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'
-      js.onerror = () => setSdkFailed(true)
+      js.onload = () => setSdkLoaded(true)
       el.parentNode.insertBefore(js, el)
     })(document, 'script', 'zenchef-sdk')
-
-    // Fallback: if SDK doesn't render after 5s, show manual button
-    const timer = setTimeout(() => {
-      const frame = document.querySelector('.zc-frame')
-      if (!frame || (frame as HTMLElement).offsetHeight === 0) {
-        setSdkFailed(true)
-      }
-    }, 5000)
-
-    return () => clearTimeout(timer)
   }, [])
-
-  const lang = ['fr', 'en', 'de', 'es', 'it', 'pt'].includes(locale) ? locale : 'en'
 
   return (
     <>
@@ -41,13 +31,13 @@ export default function ZenchefWidget({ locale = 'fr' }: { locale?: Locale }) {
         data-primary-color="#67A89A"
       />
 
-      {/* Fallback sticky button if SDK fails */}
-      {sdkFailed && (
+      {/* Bouton réservation toujours visible - remplacé par le SDK quand il charge */}
+      {!sdkLoaded && (
         <a
           href={`https://bookings.zenchef.com/results?rid=355141&lang=${lang}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-[9999] bg-amourette hover:bg-stone-900 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center gap-2"
+          className="fixed bottom-6 right-6 z-[9999] bg-[#67A89A] hover:bg-[#5a9689] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center gap-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
