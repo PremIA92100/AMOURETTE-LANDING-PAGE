@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import type { Locale } from '@/lib/i18n'
 import { slugMap } from '@/lib/i18n'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 type NavLink = { name: string; href: string }
 
@@ -93,6 +94,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
             >
               {locale === 'fr' ? 'Reserver' : 'Book'}
             </Link>
+            <LanguageSwitcher locale={locale} isScrolled={isScrolled} />
           </div>
 
           <button
@@ -131,6 +133,9 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
             >
               {locale === 'fr' ? 'Reserver une table' : 'Book a table'}
             </Link>
+            <div className="mt-6">
+              <LanguageSwitcher locale={locale} isScrolled={true} />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,0 +1,73 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import type { Locale } from '@/lib/i18n'
+
+export default function ZenchefWidget({ locale = 'fr' }: { locale?: Locale }) {
+  const [sdkFailed, setSdkFailed] = useState(false)
+
+  useEffect(() => {
+    // Zenchef SDK injection
+    ;(function (d: Document, s: string, id: string) {
+      const el = d.getElementsByTagName(s)[0]
+      if (d.getElementById(id) || !el?.parentNode) return
+      const js = d.createElement(s) as HTMLScriptElement
+      js.id = id
+      js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'
+      js.onerror = () => setSdkFailed(true)
+      el.parentNode.insertBefore(js, el)
+    })(document, 'script', 'zenchef-sdk')
+
+    // Fallback: if SDK doesn't render after 5s, show manual button
+    const timer = setTimeout(() => {
+      const frame = document.querySelector('.zc-frame')
+      if (!frame || (frame as HTMLElement).offsetHeight === 0) {
+        setSdkFailed(true)
+      }
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const lang = ['fr', 'en', 'de', 'es', 'it', 'pt'].includes(locale) ? locale : 'en'
+
+  return (
+    <>
+      {/* Zenchef SDK config */}
+      <div
+        className="zc-widget-config"
+        data-restaurant="355141"
+        data-lang={lang}
+        data-primary-color="#67A89A"
+      />
+
+      {/* Fallback sticky button if SDK fails */}
+      {sdkFailed && (
+        <a
+          href={`https://bookings.zenchef.com/results?rid=355141&lang=${lang}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 z-[9999] bg-amourette hover:bg-stone-900 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          {locale === 'fr' ? 'Réserver' : 'Book'}
+        </a>
+      )}
+    </>
+  )
+}

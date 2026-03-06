@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
+import ZenchefWidget from '@/components/ZenchefWidget'
 import type { Locale } from '@/lib/i18n'
 
 export default function PageLayout({
@@ -14,6 +15,7 @@ export default function PageLayout({
       <Navbar locale={locale} />
       <main>{children}</main>
       <Footer locale={locale} />
+      <ZenchefWidget locale={locale} />
     </>
   )
 }
