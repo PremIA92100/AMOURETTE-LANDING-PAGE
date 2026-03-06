@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "Home", "menu": "Menukaart", "photos": "Foto's", "events": "Evenementen", "privatisations": "Privatisering", "reservation": "Reserveren", "contact": "Contact", "restaurants": "Onze restaurants", "orderOnline": "Online bestellen" },
+  "hero": { "subtitle": "Parijs 16e", "discover": "Ontdekken" },
+  "about": { "label": "Ons Verhaal", "title1": "Onze", "title2": "Filosofie" },
+  "menu": { "label": "Deelkeuken", "title": "De Menukaart", "subtitle": "Oprechte en levendige keuken die mee evolueert met de seizoenen.", "viewFull": "Volledige menukaart", "baseline": "Amourette Parijs Passy: verse producten en een eindeloos terras." },
+  "gallery": { "label": "Sfeer", "title1": "De Geest", "title2": "van de Plek", "cta": "Alle foto's" },
+  "contact": { "label": "Praktische Info", "title": "Contacteer ons", "subtitle": "Voor prive-evenementen of groepsreserveringen, neem rechtstreeks contact met ons op.", "bookTable": "Tafel reserveren", "address": "Adres", "phone": "Telefoon", "hours": "Openingstijden", "access": "Bereikbaarheid" },
+  "footer": { "tagline": "Keuken van het hart, ambachtelijke wijnen en gedeelde momenten in het 16e arrondissement van Parijs.", "findUs": "Vind ons", "info": "Informatie", "legalNotices": "Juridische vermeldingen", "privacy": "Privacy", "cookies": "Cookies", "accessibility": "Toegankelijkheid", "rights": "Alle rechten voorbehouden." }
+}

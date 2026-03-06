@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "menu": "Speisekarte",
+    "photos": "Fotos",
+    "events": "Veranstaltungen",
+    "privatisations": "Privatisierung",
+    "reservation": "Reservieren",
+    "contact": "Kontakt",
+    "restaurants": "Unsere Restaurants",
+    "orderOnline": "Online bestellen"
+  },
+  "hero": { "subtitle": "Paris 16.", "discover": "Entdecken" },
+  "about": { "label": "Unsere Geschichte", "title1": "Unsere", "title2": "Philosophie" },
+  "menu": { "label": "Teilen-Kuche", "title": "Speisekarte", "subtitle": "Aufrichtige und lebendige Kuche, die sich mit den Jahreszeiten entwickelt.", "viewFull": "Vollstandige Karte", "baseline": "Amourette Paris Passy: Frische Produkte und eine endlose Terrasse." },
+  "gallery": { "label": "Ambiente", "title1": "Der Geist", "title2": "des Ortes", "cta": "Alle Fotos" },
+  "contact": { "label": "Praktische Infos", "title": "Kontaktieren Sie uns", "subtitle": "Fur private Veranstaltungen kontaktieren Sie uns bitte direkt.", "bookTable": "Tisch reservieren", "address": "Adresse", "phone": "Telefon", "hours": "Offnungszeiten", "access": "Anfahrt" },
+  "footer": { "tagline": "Herzliche Kuche, Winzerweine und gemeinsame Momente im 16. Arrondissement von Paris.", "findUs": "Finden Sie uns", "info": "Informationen", "legalNotices": "Impressum", "privacy": "Datenschutz", "cookies": "Cookie-Richtlinie", "accessibility": "Barrierefreiheit", "rights": "Alle Rechte vorbehalten." }
+}

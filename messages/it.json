@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "Home", "menu": "Menu", "photos": "Foto", "events": "Eventi", "privatisations": "Privatizzazioni", "reservation": "Prenota", "contact": "Contatti", "restaurants": "I nostri ristoranti", "orderOnline": "Ordina online" },
+  "hero": { "subtitle": "Parigi 16", "discover": "Scoprire" },
+  "about": { "label": "La Nostra Storia", "title1": "La Nostra", "title2": "Filosofia" },
+  "menu": { "label": "Cucina da Condividere", "title": "Il Menu", "subtitle": "Cucina sincera e vibrante che si evolve con le stagioni.", "viewFull": "Menu completo", "baseline": "Amourette Parigi Passy: cucina di prodotti freschi e una terrazza senza fine." },
+  "gallery": { "label": "Atmosfera", "title1": "Lo Spirito", "title2": "del Luogo", "cta": "Tutte le foto" },
+  "contact": { "label": "Info Pratiche", "title": "Contattateci", "subtitle": "Per eventi privati o prenotazioni di gruppo, contattateci direttamente.", "bookTable": "Prenota un tavolo", "address": "Indirizzo", "phone": "Telefono", "hours": "Orari", "access": "Come arrivare" },
+  "footer": { "tagline": "Cucina del cuore, vini d'autore e momenti da condividere nel 16 arrondissement di Parigi.", "findUs": "Trovateci", "info": "Informazioni", "legalNotices": "Note legali", "privacy": "Privacy", "cookies": "Cookie", "accessibility": "Accessibilita", "rights": "Tutti i diritti riservati." }
+}

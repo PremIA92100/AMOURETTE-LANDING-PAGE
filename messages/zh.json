@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "首页", "menu": "菜单", "photos": "照片", "events": "活动", "privatisations": "私人活动", "reservation": "预订", "contact": "联系方式", "restaurants": "我们的餐厅", "orderOnline": "在线订购" },
+  "hero": { "subtitle": "巴黎16区", "discover": "探索" },
+  "about": { "label": "我们的故事", "title1": "我们的", "title2": "理念" },
+  "menu": { "label": "分享美食", "title": "菜单", "subtitle": "随季节变化的真诚而充满活力的美食。", "viewFull": "查看完整菜单", "baseline": "Amourette巴黎Passy：新鲜食材美食和无尽的露台。" },
+  "gallery": { "label": "氛围", "title1": "场所", "title2": "精神", "cta": "所有照片" },
+  "contact": { "label": "实用信息", "title": "联系我们", "subtitle": "如需私人活动或团体预订，请直接联系我们。", "bookTable": "预订餐桌", "address": "地址", "phone": "电话", "hours": "营业时间", "access": "交通方式" },
+  "footer": { "tagline": "巴黎16区的用心美食、精选葡萄酒和分享时刻。", "findUs": "找到我们", "info": "信息", "legalNotices": "法律信息", "privacy": "隐私政策", "cookies": "Cookie政策", "accessibility": "无障碍", "rights": "版权所有。" }
+}

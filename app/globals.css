@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --color-gold: #D4AF37;
+  --color-amourette: #67A89A;
+  --color-dark: #0a0a0a;
+  --color-paper: #FDFCF8;
+}
+
+::selection {
+  background-color: #67A89A;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}

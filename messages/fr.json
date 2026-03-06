@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "menu": "La Carte",
+    "photos": "Photos",
+    "events": "Evenements",
+    "privatisations": "Privatisations",
+    "reservation": "Reserver",
+    "contact": "Contact",
+    "restaurants": "Nos restaurants",
+    "orderOnline": "Commander en ligne"
+  },
+  "hero": {
+    "subtitle": "Paris 16eme",
+    "discover": "Decouvrir"
+  },
+  "about": {
+    "label": "Notre Histoire",
+    "title1": "Notre",
+    "title2": "Philosophie"
+  },
+  "menu": {
+    "label": "Cuisine de Partage",
+    "title": "La Carte",
+    "subtitle": "Une cuisine sincere et vivante, qui evolue au gre des saisons et des arrivages.",
+    "viewFull": "Voir la carte complete",
+    "baseline": "Amourette Paris Passy : une cuisine de produits et une terrasse sans fin."
+  },
+  "gallery": {
+    "label": "Ambiance",
+    "title1": "L'Esprit",
+    "title2": "du Lieu",
+    "cta": "Toutes les photos"
+  },
+  "contact": {
+    "label": "Infos Pratiques",
+    "title": "Nous Contacter",
+    "subtitle": "Pour toute demande d'evenement privatise ou de groupe, n'hesitez pas a nous contacter directement.",
+    "bookTable": "Reserver une table",
+    "address": "Adresse",
+    "phone": "Telephone",
+    "hours": "Horaires",
+    "access": "Acces"
+  },
+  "footer": {
+    "tagline": "Une cuisine de coeur, des vins d'auteurs et des moments a partager dans le 16eme arrondissement de Paris.",
+    "findUs": "Nous trouver",
+    "info": "Informations",
+    "legalNotices": "Mentions legales",
+    "privacy": "Politique de confidentialite",
+    "cookies": "Politique cookies",
+    "accessibility": "Accessibilite",
+    "rights": "Tous droits reserves."
+  }
+}

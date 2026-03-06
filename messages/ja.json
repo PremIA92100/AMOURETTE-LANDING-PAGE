@@ -1,0 +1,9 @@
+{
+  "nav": { "home": "ホーム", "menu": "メニュー", "photos": "写真", "events": "イベント", "privatisations": "貸切", "reservation": "予約", "contact": "お問合せ", "restaurants": "レストラン", "orderOnline": "オンライン注文" },
+  "hero": { "subtitle": "パリ16区", "discover": "発見" },
+  "about": { "label": "私たちの物語", "title1": "私たちの", "title2": "哲学" },
+  "menu": { "label": "シェア料理", "title": "メニュー", "subtitle": "季節とともに変化する誠実で活気ある料理。", "viewFull": "フルメニューを見る", "baseline": "Amouretteパリ・パッシー：新鮮な食材の料理と果てしないテラス。" },
+  "gallery": { "label": "雰囲気", "title1": "場所の", "title2": "精神", "cta": "全ての写真" },
+  "contact": { "label": "基本情報", "title": "お問い合わせ", "subtitle": "プライベートイベントやグループ予約については、直接お問い合わせください。", "bookTable": "テーブルを予約", "address": "住所", "phone": "電話", "hours": "営業時間", "access": "アクセス" },
+  "footer": { "tagline": "パリ16区の心のこもった料理、作家のワイン、分かち合いのひととき。", "findUs": "所在地", "info": "情報", "legalNotices": "法的情報", "privacy": "プライバシー", "cookies": "Cookie", "accessibility": "アクセシビリティ", "rights": "全著作権所有。" }
+}

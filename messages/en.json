@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "photos": "Photos",
+    "events": "Events",
+    "privatisations": "Private Events",
+    "reservation": "Book",
+    "contact": "Contact",
+    "restaurants": "Our restaurants",
+    "orderOnline": "Order online"
+  },
+  "hero": {
+    "subtitle": "Paris 16th",
+    "discover": "Discover"
+  },
+  "about": {
+    "label": "Our Story",
+    "title1": "Our",
+    "title2": "Philosophy"
+  },
+  "menu": {
+    "label": "Sharing Cuisine",
+    "title": "The Menu",
+    "subtitle": "Sincere and vibrant cuisine that evolves with the seasons and fresh arrivals.",
+    "viewFull": "See full menu",
+    "baseline": "Amourette Paris Passy: fresh ingredient cuisine and an endless terrace."
+  },
+  "gallery": {
+    "label": "Atmosphere",
+    "title1": "The Spirit",
+    "title2": "of the Place",
+    "cta": "All photos"
+  },
+  "contact": {
+    "label": "Practical Info",
+    "title": "Contact Us",
+    "subtitle": "For private event inquiries or group bookings, please contact us directly.",
+    "bookTable": "Book a table",
+    "address": "Address",
+    "phone": "Phone",
+    "hours": "Hours",
+    "access": "Getting here"
+  },
+  "footer": {
+    "tagline": "Heartfelt cuisine, artisan wines and shared moments in the 16th arrondissement of Paris.",
+    "findUs": "Find us",
+    "info": "Information",
+    "legalNotices": "Legal notices",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy",
+    "accessibility": "Accessibility",
+    "rights": "All rights reserved."
+  }
+}
