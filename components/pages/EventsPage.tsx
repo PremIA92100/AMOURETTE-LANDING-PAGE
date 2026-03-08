@@ -18,7 +18,7 @@ export default function EventsPageContent({ locale = 'fr' }: { locale?: Locale }
               transition={{ duration: 0.8, ease: easeOutExpo }}
               className="text-5xl md:text-8xl font-serif text-stone-900 mb-16 text-center"
             >
-              {locale === 'fr' ? 'Evenements' : 'Events'}
+              {locale === 'fr' ? 'Événements' : 'Events'}
             </motion.h1>
 
             <div className="space-y-12">
@@ -32,11 +32,11 @@ export default function EventsPageContent({ locale = 'fr' }: { locale?: Locale }
                   31/12/2025 - 01/01/2026 | 19h00 - 02h00
                 </span>
                 <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4 mb-4">
-                  Reveillon du 31 decembre 2025
+                  Réveillon du 31 décembre 2025
                 </h2>
                 <p className="text-stone-500 text-lg font-light leading-relaxed mb-4">
-                  Pour le reveillon du 31 decembre 2025, Amourette vous propose
-                  un menu de fete gourmand. N&apos;hesitez pas a reserver des
+                  Pour le réveillon du 31 décembre 2025, Amourette vous propose
+                  un menu de fête gourmand. N&apos;hésitez pas à réserver dès
                   maintenant !
                 </p>
                 <span className="inline-block text-amourette font-bold text-xl">
@@ -54,16 +54,16 @@ export default function EventsPageContent({ locale = 'fr' }: { locale?: Locale }
                   06/12/2025 - 31/12/2025 | 12h00 - 23h00
                 </span>
                 <h2 className="text-3xl md:text-4xl font-serif text-stone-900 mt-4 mb-4">
-                  Repas d&apos;affaires fin d&apos;annee
+                  Repas d&apos;affaires fin d&apos;année
                 </h2>
                 <p className="text-stone-500 text-lg font-light leading-relaxed">
-                  Vous souhaitez reunir vos collaborateurs pour un evenement de
-                  fin d&apos;annee ? Nous sommes heureux de vous accueillir chez
+                  Vous souhaitez réunir vos collaborateurs pour un événement de
+                  fin d&apos;année ? Nous sommes heureux de vous accueillir chez
                   Amourette pour vos repas d&apos;affaires. Le restaurant est
-                  privatisable dans son integralite et peut accueillir
-                  jusqu&apos;a 60 personnes en hiver. Contactez-nous pour toute
+                  privatisable dans son intégralité et peut accueillir
+                  jusqu&apos;à 60 personnes en hiver. Contactez-nous pour toute
                   demande au 09 52 86 14 47, nous serons ravis de vous faire une
-                  proposition commerciale adaptee a vos besoins.
+                  proposition commerciale adaptée à vos besoins.
                 </p>
               </motion.article>
             </div>

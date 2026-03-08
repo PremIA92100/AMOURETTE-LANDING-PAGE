@@ -19,7 +19,7 @@ export default function ReservationPageContent({ locale = 'fr' }: { locale?: Loc
               transition={{ duration: 0.8, ease: easeOutExpo }}
               className="text-5xl md:text-8xl font-serif text-stone-900 mb-8"
             >
-              {locale === 'fr' ? 'Reserver une table' : 'Book a Table'}
+              {locale === 'fr' ? 'Réserver une table' : 'Book a Table'}
             </motion.h1>
 
             <motion.p
@@ -29,7 +29,7 @@ export default function ReservationPageContent({ locale = 'fr' }: { locale?: Loc
               className="text-stone-500 text-xl font-light leading-relaxed mb-12"
             >
               {locale === 'fr'
-                ? "Contactez-nous par telephone pour reserver votre table ou pour toute demande d'evenement privatise."
+                ? "Contactez-nous par téléphone pour réserver votre table ou pour toute demande d'événement privatisé."
                 : 'Contact us by phone to book your table or for any private event inquiry.'}
             </motion.p>
 

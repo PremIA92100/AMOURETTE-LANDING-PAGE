@@ -44,7 +44,7 @@ export default function Hero({ locale = 'fr' }: { locale?: string }) {
           transition={{ duration: 0.8, delay: 1.2, ease: easeOutExpo }}
           className="block text-white/70 text-[10px] md:text-xs uppercase tracking-[0.5em] mb-6 font-medium drop-shadow-md"
         >
-          Paris 16eme
+          Paris 16ème
         </motion.span>
 
         <h1 className="text-5xl md:text-9xl lg:text-[10rem] font-serif text-white leading-none tracking-tight drop-shadow-lg">
@@ -79,7 +79,7 @@ export default function Hero({ locale = 'fr' }: { locale?: string }) {
         whileHover={{ opacity: 1 }}
       >
         <span className="text-[9px] uppercase tracking-[0.3em] text-white/80 font-light">
-          {locale === 'fr' ? 'Decouvrir' : 'Discover'}
+          {locale === 'fr' ? 'Découvrir' : 'Discover'}
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}

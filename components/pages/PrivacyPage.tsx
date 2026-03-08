@@ -9,7 +9,7 @@ export default function PrivacyPageContent({ locale = 'fr' }: { locale?: Locale 
           <div className="max-w-3xl mx-auto prose prose-stone">
             <h1 className="text-4xl md:text-6xl font-serif text-stone-900 mb-12">
               {locale === 'fr'
-                ? 'Politique de protection des donnees'
+                ? 'Politique de protection des données'
                 : 'Privacy Policy'}
             </h1>
 
@@ -19,31 +19,31 @@ export default function PrivacyPageContent({ locale = 'fr' }: { locale?: Locale 
               10 Boulevard Delessert, 75016 Paris.
             </p>
 
-            <h2 className="text-2xl font-serif text-stone-900 mt-8">2. Donnees collectees</h2>
+            <h2 className="text-2xl font-serif text-stone-900 mt-8">2. Données collectées</h2>
             <p className="text-stone-600 leading-relaxed">
-              Les donnees personnelles collectees sont limitees aux informations
-              necessaires au traitement des reservations et des demandes de contact :
-              nom, prenom, adresse email, numero de telephone.
+              Les données personnelles collectées sont limitées aux informations
+              nécessaires au traitement des réservations et des demandes de contact :
+              nom, prénom, adresse email, numéro de téléphone.
             </p>
 
-            <h2 className="text-2xl font-serif text-stone-900 mt-8">3. Finalite</h2>
+            <h2 className="text-2xl font-serif text-stone-900 mt-8">3. Finalité</h2>
             <p className="text-stone-600 leading-relaxed">
-              Les donnees sont traitees pour la gestion des reservations, la
-              communication avec nos clients, et l&apos;amelioration de nos services.
+              Les données sont traitées pour la gestion des réservations, la
+              communication avec nos clients, et l&apos;amélioration de nos services.
             </p>
 
             <h2 className="text-2xl font-serif text-stone-900 mt-8">4. Vos droits</h2>
             <p className="text-stone-600 leading-relaxed">
-              Conformement au RGPD, vous disposez d&apos;un droit d&apos;acces, de
-              rectification, de suppression et de portabilite de vos donnees.
-              Contactez-nous au 09 52 86 14 47 ou a l&apos;adresse du restaurant.
+              Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de
+              rectification, de suppression et de portabilité de vos données.
+              Contactez-nous au 09 52 86 14 47 ou à l&apos;adresse du restaurant.
             </p>
 
-            <h2 className="text-2xl font-serif text-stone-900 mt-8">5. Duree de conservation</h2>
+            <h2 className="text-2xl font-serif text-stone-900 mt-8">5. Durée de conservation</h2>
             <p className="text-stone-600 leading-relaxed">
-              Les donnees sont conservees pendant la duree necessaire aux
-              finalites pour lesquelles elles ont ete collectees, dans le respect
-              des obligations legales.
+              Les données sont conservées pendant la durée nécessaire aux
+              finalités pour lesquelles elles ont été collectées, dans le respect
+              des obligations légales.
             </p>
           </div>
         </div>

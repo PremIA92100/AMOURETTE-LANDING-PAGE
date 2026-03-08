@@ -16,7 +16,7 @@ const contactItems = [
   },
   {
     icon: Phone,
-    title: 'Telephone',
+    title: 'Téléphone',
     value: '09 52 86 14 47',
     href: 'tel:0952861447',
   },
@@ -72,7 +72,7 @@ export default function ContactSection({
                 className="text-stone-500 text-base md:text-lg font-light leading-relaxed"
               >
                 {locale === 'fr'
-                  ? "Pour toute demande d'evenement privatise ou de groupe, n'hesitez pas a nous contacter directement."
+                  ? "Pour toute demande d'événement privatisé ou de groupe, n'hésitez pas à nous contacter directement."
                   : 'For private event inquiries or group bookings, please contact us directly.'}
               </motion.p>
             </div>
@@ -127,7 +127,7 @@ export default function ContactSection({
                 href={slugMap.reservation[locale]}
                 className="inline-block w-full md:w-auto px-10 py-4 min-h-[44px] bg-stone-900 text-white text-center font-bold uppercase tracking-widest md:hover:bg-amourette transition-colors duration-300"
               >
-                {locale === 'fr' ? 'Reserver une table' : 'Book a table'}
+                {locale === 'fr' ? 'Réserver une table' : 'Book a table'}
               </Link>
             </motion.div>
           </div>

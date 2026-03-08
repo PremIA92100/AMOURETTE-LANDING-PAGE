@@ -92,19 +92,22 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
                   : 'border-white text-white hover:bg-white hover:text-stone-900'
               }`}
             >
-              {locale === 'fr' ? 'Reserver' : 'Book'}
+              {locale === 'fr' ? 'Réserver' : 'Book'}
             </Link>
             <LanguageSwitcher locale={locale} isScrolled={isScrolled} />
           </div>
 
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center ${
-              isScrolled ? 'text-stone-900' : 'text-white'
-            }`}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSwitcher locale={locale} isScrolled={isScrolled} compact />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center ${
+                isScrolled ? 'text-stone-900' : 'text-white'
+              }`}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 
@@ -131,7 +134,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-8 py-4 min-h-[44px] bg-amourette text-white font-bold uppercase tracking-widest mt-8"
             >
-              {locale === 'fr' ? 'Reserver une table' : 'Book a table'}
+              {locale === 'fr' ? 'Réserver une table' : 'Book a table'}
             </Link>
             <div className="mt-6">
               <LanguageSwitcher locale={locale} isScrolled={true} />

@@ -7,7 +7,7 @@ import Image from 'next/image'
 const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const aboutText =
-  "La vie se resume parfois a des choses simples. Bien manger, rester en famille, aimer ses proches, cuisiner un bon repas. Etant petits a Laguiole, nos parents nous ont appris a cherir les bonnes choses : cueillir de la salade au jardin, manger des carottes crues a pleines dents, cuire une belle cote de boeuf d'Aubrac, tartiner un rocamadour sur du pain grille. Autant de souvenirs d'enfance que nous partageons avec Amourette."
+  "Chez Amourette, on cuisine comme on reçoit chez soi. Des produits choisis avec soin, des recettes qui ont du caractère, et cette envie simple de bien faire les choses. Pas de chichi, juste le plaisir de partager un bon moment à table."
 
 const aboutWords = aboutText.split(' ')
 
@@ -37,18 +37,18 @@ function WordReveal({ words, isInView }: { words: string[]; isInView: boolean })
 const cardData = [
   {
     title: 'Terroir',
-    subtitle: 'Produits frais et sources',
-    desc: 'Nous privilegions les circuits courts et la qualite brute.',
+    subtitle: 'Produits frais et sourcés',
+    desc: 'Nous privilégions les circuits courts et la qualité brute des produits.',
   },
   {
     title: 'Partage',
-    subtitle: 'Une cuisine de coeur',
-    desc: 'Des plats penses pour etre partages et celebres ensemble.',
+    subtitle: 'Une cuisine de cœur',
+    desc: 'Des plats pensés pour être partagés et célébrés ensemble.',
   },
   {
     title: 'Vins',
-    subtitle: 'Selection Pointue',
-    desc: "Une carte de vins natures et vivants pour accompagner chaque instant.",
+    subtitle: 'Sélection pointue',
+    desc: "Une carte de vins soigneusement choisis pour les amateurs les plus exigeants.",
   },
 ]
 

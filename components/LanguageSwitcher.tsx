@@ -39,9 +39,11 @@ function detectCurrentSection(pathname: string): { section: string; locale: Loca
 export default function LanguageSwitcher({
   locale: currentLocale,
   isScrolled = false,
+  compact = false,
 }: {
   locale: Locale
   isScrolled?: boolean
+  compact?: boolean
 }) {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -63,15 +65,18 @@ export default function LanguageSwitcher({
     <div ref={ref} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-1.5 text-sm uppercase tracking-widest font-medium transition-colors ${
+        className={`flex items-center gap-1 text-sm uppercase tracking-widest font-medium transition-colors ${
           isScrolled
             ? 'text-stone-600 hover:text-amourette'
             : 'text-stone-300 hover:text-white'
         }`}
         aria-label="Change language"
       >
-        <Globe size={16} />
+        {!compact && <Globe size={16} />}
         {currentLocale.toUpperCase()}
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className="ml-0.5 opacity-60">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </button>
 
       {isOpen && (

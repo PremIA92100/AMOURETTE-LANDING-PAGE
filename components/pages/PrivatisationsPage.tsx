@@ -30,19 +30,19 @@ export default function PrivatisationsPageContent({ locale = 'fr' }: { locale?: 
                 className="space-y-6 text-stone-600 text-lg font-light leading-relaxed"
               >
                 <p>
-                  Nous sommes heureux de vous accueillir pour vos evenements
+                  Nous sommes heureux de vous accueillir pour vos événements
                   d&apos;affaires ou familiaux. Nous proposons des privatisations ou
-                  des semi privatisations pour accueillir de grandes tablees :
-                  menu assis ou cocktail en fonction de l&apos;evenement.
+                  des semi-privatisations pour accueillir de grandes tablées :
+                  menu assis ou cocktail en fonction de l&apos;événement.
                 </p>
                 <p>
-                  En hiver nous pouvons recevoir des groupes allant jusqu&apos;a 60
-                  personnes pour un repas assis (salle privative a l&apos;etage). En
-                  ete, la belle terrasse nous permet de recevoir jusqu&apos;a 200
+                  En hiver, nous pouvons recevoir des groupes allant jusqu&apos;à 60
+                  personnes pour un repas assis (salle privative à l&apos;étage). En
+                  été, la belle terrasse nous permet de recevoir jusqu&apos;à 200
                   personnes assises, 300 en mode cocktail.
                 </p>
                 <p>
-                  Contactez nous pour toute demande au{' '}
+                  Contactez-nous pour toute demande au{' '}
                   <a
                     href="tel:0952861447"
                     className="text-amourette hover:underline font-medium"
@@ -50,10 +50,10 @@ export default function PrivatisationsPageContent({ locale = 'fr' }: { locale?: 
                     09 52 86 14 47
                   </a>
                   , nous serons ravis de vous faire une proposition commerciale
-                  adaptee a vos besoins.
+                  adaptée à vos besoins.
                 </p>
                 <p className="text-amourette font-serif text-xl italic">
-                  L&apos;equipe d&apos;Amourette
+                  L&apos;équipe d&apos;Amourette
                 </p>
               </motion.div>
 

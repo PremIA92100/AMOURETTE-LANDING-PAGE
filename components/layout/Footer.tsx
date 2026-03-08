@@ -17,7 +17,7 @@ export default function Footer({ locale = 'fr' }: { locale?: Locale }) {
             <h3 className="text-3xl font-serif text-gold">Amourette</h3>
             <p className="text-sm leading-relaxed max-w-xs">
               {locale === 'fr'
-                ? "Une cuisine de coeur, des vins d'auteurs et des moments a partager dans le 16eme arrondissement de Paris."
+                ? "Une cuisine de cœur, une sélection de vins choisis et des moments à partager dans le 16ème arrondissement de Paris."
                 : 'Heartfelt cuisine, artisan wines and shared moments in the 16th arrondissement of Paris.'}
             </p>
             <div className="flex space-x-4">
@@ -66,25 +66,18 @@ export default function Footer({ locale = 'fr' }: { locale?: Locale }) {
             </h4>
             <div className="flex flex-col space-y-1 md:space-y-2 text-sm">
               <Link href={legalHref} className="md:hover:text-gold transition-colors min-h-[44px] md:min-h-0 flex items-center text-base md:text-sm">
-                {locale === 'fr' ? 'Mentions legales' : 'Legal notices'}
+                {locale === 'fr' ? 'Mentions légales' : 'Legal notices'}
               </Link>
               <Link href={privacyHref} className="md:hover:text-gold transition-colors min-h-[44px] md:min-h-0 flex items-center text-base md:text-sm">
-                {locale === 'fr' ? 'Politique de confidentialite' : 'Privacy policy'}
+                {locale === 'fr' ? 'Politique de confidentialité' : 'Privacy policy'}
               </Link>
               <Link href={cookiesHref} className="md:hover:text-gold transition-colors min-h-[44px] md:min-h-0 flex items-center text-base md:text-sm">
                 {locale === 'fr' ? 'Politique cookies' : 'Cookie policy'}
               </Link>
               <Link href={accessibilityHref} className="md:hover:text-gold transition-colors min-h-[44px] md:min-h-0 flex items-center text-base md:text-sm">
-                {locale === 'fr' ? 'Accessibilite' : 'Accessibility'}
+                {locale === 'fr' ? 'Accessibilité' : 'Accessibility'}
               </Link>
-              <a
-                href="https://www.polo-auteuil.fr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:hover:text-gold transition-colors min-h-[44px] md:min-h-0 flex items-center text-base md:text-sm"
-              >
-                Nos restaurants
-              </a>
+
             </div>
           </div>
         </div>
@@ -92,7 +85,7 @@ export default function Footer({ locale = 'fr' }: { locale?: Locale }) {
         <div className="border-t border-stone-900 mt-10 md:mt-16 pt-6 md:pt-8 text-center text-xs text-stone-600">
           <p>
             &copy; {new Date().getFullYear()} Amourette Passy. Tous droits
-            reserves.
+            réservés.
           </p>
         </div>
       </div>
