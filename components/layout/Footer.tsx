@@ -77,7 +77,14 @@ export default function Footer({ locale = 'fr' }: { locale?: Locale }) {
               <Link href={accessibilityHref} className="md:hover:text-gold transition-colors min-h-[44px] md:min-h-0 flex items-center text-base md:text-sm">
                 {locale === 'fr' ? 'Accessibilité' : 'Accessibility'}
               </Link>
-
+              <a
+                href="https://www.polo-auteuil.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:hover:text-gold transition-colors min-h-[44px] md:min-h-0 flex items-center text-base md:text-sm"
+              >
+                Nos restaurants
+              </a>
             </div>
           </div>
         </div>
