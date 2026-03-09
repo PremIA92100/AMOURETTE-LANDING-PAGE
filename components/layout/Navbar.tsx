@@ -35,11 +35,36 @@ function getNavLinks(locale: Locale): NavLink[] {
     { name: 'Menu', href: slugMap.menus[locale] },
     { name: 'Photos', href: slugMap.photos[locale] },
     { name: 'Privatisations', href: slugMap.privatisations[locale] },
+    { name: 'Commander en ligne', href: deliverooUrl },
     { name: 'Contact', href: slugMap.contact[locale] },
   ]
 }
 
 const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1]
+
+function NavLinkItem({ link, onClick }: { link: NavLink; onClick: () => void }) {
+  const isExternal = link.href.startsWith('http')
+  const className = "text-stone-700 hover:text-amourette transition-colors duration-300 block"
+
+  if (isExternal) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+        className={className}
+      >
+        {link.name}
+      </a>
+    )
+  }
+  return (
+    <Link href={link.href} onClick={onClick} className={className}>
+      {link.name}
+    </Link>
+  )
+}
 
 export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -53,7 +78,6 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -80,7 +104,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
           {/* Logo */}
           <Link
             href={homeHref}
-            className={`text-2xl font-serif font-bold tracking-tighter transition-colors z-50 ${
+            className={`text-2xl font-serif font-bold tracking-tighter transition-colors z-[60] ${
               isMenuOpen
                 ? 'text-stone-900'
                 : isScrolled
@@ -91,8 +115,8 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
             Amourette
           </Link>
 
-          {/* Right side: Language + Hamburger */}
-          <div className="flex items-center gap-4 z-50">
+          {/* Right: Language + Hamburger */}
+          <div className="flex items-center gap-4 z-[60]">
             {!isMenuOpen && (
               <LanguageSwitcher locale={locale} isScrolled={isScrolled} compact />
             )}
@@ -113,112 +137,151 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
         </div>
       </motion.nav>
 
-      {/* ─── Fullscreen overlay menu ─── */}
+      {/* ─── Menu overlay ─── */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: easeOutExpo }}
-            className="fixed inset-0 z-40 bg-paper flex flex-col justify-center items-center"
-          >
-            {/* Nav links */}
-            <nav className="flex flex-col items-center gap-2 md:gap-4">
-              {navLinks.map((link, i) => {
-                const isExternal = link.href.startsWith('http')
-                return (
+          <>
+            {/* Backdrop (desktop: click to close) */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm hidden md:block"
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            {/* ─── Mobile: fullscreen overlay ─── */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: easeOutExpo }}
+              className="fixed inset-0 z-40 bg-paper flex flex-col justify-center items-center md:hidden"
+            >
+              <nav className="flex flex-col items-center gap-2">
+                {navLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.1 + i * 0.08,
-                      ease: easeOutExpo,
-                    }}
+                    transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: easeOutExpo }}
+                    className="text-3xl font-serif py-3"
                   >
-                    {isExternal ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-3xl md:text-5xl font-serif text-stone-800 hover:text-amourette transition-colors duration-300 py-3 md:py-4 block"
-                      >
-                        {link.name}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-3xl md:text-5xl font-serif text-stone-800 hover:text-amourette transition-colors duration-300 py-3 md:py-4 block"
-                      >
-                        {link.name}
-                      </Link>
-                    )}
+                    <NavLinkItem link={link} onClick={() => setIsMenuOpen(false)} />
                   </motion.div>
-                )
-              })}
-            </nav>
+                ))}
+              </nav>
 
-            {/* Separator */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: easeOutExpo }}
-              className="w-16 h-[1px] bg-amourette/40 mt-10 md:mt-14 mb-8 md:mb-10 origin-center"
-            />
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 0.4, ease: easeOutExpo }}
+                className="w-16 h-[1px] bg-amourette/40 mt-10 mb-8 origin-center"
+              />
 
-            {/* Footer info */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5, ease: easeOutExpo }}
-              className="flex flex-col items-center gap-3 text-stone-400 text-sm"
-            >
-              <div className="flex items-center gap-2">
-                <MapPin size={14} className="text-amourette" />
-                <span>10 Bd Delessert, 75016 Paris</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={14} className="text-amourette" />
-                <a href="tel:0952861447" className="hover:text-amourette transition-colors">
-                  09 52 86 14 47
-                </a>
-              </div>
-              <div className="flex items-center gap-4 mt-2">
-                <a
-                  href="https://www.instagram.com/amourettepassy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amourette transition-colors uppercase tracking-widest text-xs"
-                >
-                  Instagram
-                </a>
-                <span className="text-stone-300">·</span>
-                <a
-                  href="https://www.tripadvisor.fr/Restaurant_Review-g187147-d25182853-Reviews-Amourette_Passy-Paris_Ile_de_France.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-amourette transition-colors uppercase tracking-widest text-xs"
-                >
-                  TripAdvisor
-                </a>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5, ease: easeOutExpo }}
+                className="flex flex-col items-center gap-3 text-stone-400 text-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <MapPin size={14} className="text-amourette" />
+                  <span>10 Bd Delessert, 75016 Paris</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-amourette" />
+                  <a href="tel:0952861447" className="hover:text-amourette transition-colors">09 52 86 14 47</a>
+                </div>
+                <div className="flex items-center gap-4 mt-2">
+                  <a href="https://www.instagram.com/amourettepassy/" target="_blank" rel="noopener noreferrer" className="hover:text-amourette transition-colors uppercase tracking-widest text-xs">Instagram</a>
+                  <span className="text-stone-300">·</span>
+                  <a href="https://www.tripadvisor.fr/Restaurant_Review-g187147-d25182853-Reviews-Amourette_Passy-Paris_Ile_de_France.html" target="_blank" rel="noopener noreferrer" className="hover:text-amourette transition-colors uppercase tracking-widest text-xs">TripAdvisor</a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                className="mt-8"
+              >
+                <LanguageSwitcher locale={locale} isScrolled={true} />
+              </motion.div>
             </motion.div>
 
-            {/* Language switcher in menu */}
+            {/* ─── Desktop: sidebar from right ─── */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.6 }}
-              className="mt-8"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.4, ease: easeOutExpo }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-[420px] bg-paper shadow-2xl border-l border-stone-100 hidden md:flex flex-col"
             >
-              <LanguageSwitcher locale={locale} isScrolled={true} />
+              {/* Close button area (top right, aligned with navbar hamburger) */}
+              <div className="flex justify-end px-6 py-8">
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="min-w-[44px] min-h-[44px] flex items-center justify-center text-stone-900 hover:text-amourette transition-colors"
+                  aria-label="Fermer le menu"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              {/* Nav links */}
+              <nav className="flex-1 flex flex-col justify-center px-12 gap-2">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.15 + i * 0.06, ease: easeOutExpo }}
+                    className="py-3"
+                  >
+                    <div className="text-3xl font-serif">
+                      <NavLinkItem link={link} onClick={() => setIsMenuOpen(false)} />
+                    </div>
+                  </motion.div>
+                ))}
+              </nav>
+
+              {/* Separator */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 0.4, ease: easeOutExpo }}
+                className="mx-12 h-[1px] bg-amourette/30 origin-left"
+              />
+
+              {/* Footer */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5, ease: easeOutExpo }}
+                className="px-12 py-10 space-y-4"
+              >
+                <div className="flex items-center gap-2.5 text-stone-400 text-sm">
+                  <MapPin size={15} className="text-amourette" />
+                  <span>10 Bd Delessert, 75016 Paris</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-stone-400 text-sm">
+                  <Phone size={15} className="text-amourette" />
+                  <a href="tel:0952861447" className="hover:text-amourette transition-colors">09 52 86 14 47</a>
+                </div>
+                <div className="flex items-center gap-4 pt-2">
+                  <a href="https://www.instagram.com/amourettepassy/" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-amourette transition-colors uppercase tracking-widest text-xs">Instagram</a>
+                  <span className="text-stone-200">·</span>
+                  <a href="https://www.tripadvisor.fr/Restaurant_Review-g187147-d25182853-Reviews-Amourette_Passy-Paris_Ile_de_France.html" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-amourette transition-colors uppercase tracking-widest text-xs">TripAdvisor</a>
+                </div>
+                <div className="pt-3">
+                  <LanguageSwitcher locale={locale} isScrolled={true} />
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
