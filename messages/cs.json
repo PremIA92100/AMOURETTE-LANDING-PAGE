@@ -1,9 +1,67 @@
 {
-  "nav": { "home": "Domov", "menu": "Jidelni listek", "photos": "Fotografie", "events": "Udalosti", "privatisations": "Privatizace", "reservation": "Rezervace", "contact": "Kontakt", "restaurants": "Nase restaurace", "orderOnline": "Objednat online" },
-  "hero": { "subtitle": "Pariz 16.", "discover": "Objevte" },
-  "about": { "label": "Nas pribeh", "title1": "Nase", "title2": "Filozofie" },
-  "menu": { "label": "Sdilena kuchyne", "title": "Jidelni listek", "subtitle": "Uprimna a ziva kuchyne, ktera se vyviji s rocnimi obdobimi.", "viewFull": "Kompletni jidelni listek", "baseline": "Amourette Pariz Passy: kuchyne z cerstych produktu a nekonecna terasa." },
-  "gallery": { "label": "Atmosfera", "title1": "Duch", "title2": "Mista", "cta": "Vsechny fotografie" },
-  "contact": { "label": "Prakticke informace", "title": "Kontaktujte nas", "subtitle": "Pro soukrome akce nebo skupinove rezervace nas kontaktujte primo.", "bookTable": "Rezervovat stul", "address": "Adresa", "phone": "Telefon", "hours": "Oteviraci doba", "access": "Jak se k nam dostat" },
-  "footer": { "tagline": "Kuchyne ze srdce, autorska vina a sdilene okamziky v 16. obvodu Parize.", "findUs": "Najdete nas", "info": "Informace", "legalNotices": "Pravni informace", "privacy": "Soukromi", "cookies": "Cookies", "accessibility": "Pristupnost", "rights": "Vsechna prava vyhrazena." }
+  "nav": {
+    "home": "Domov",
+    "menu": "Jidelni listek",
+    "photos": "Fotografie",
+    "events": "Udalosti",
+    "privatisations": "Privatizace",
+    "reservation": "Rezervace",
+    "contact": "Kontakt",
+    "restaurants": "Nase restaurace",
+    "orderOnline": "Objednat online"
+  },
+  "hero": {
+    "subtitle": "Pariz 16.",
+    "discover": "Objevte"
+  },
+  "about": {
+    "label": "Nas pribeh",
+    "title1": "Nase",
+    "title2": "Filozofie"
+  },
+  "menu": {
+    "label": "Sdilena kuchyne",
+    "title": "Jidelni listek",
+    "subtitle": "Uprimna a ziva kuchyne, ktera se vyviji s rocnimi obdobimi.",
+    "viewFull": "Kompletni jidelni listek",
+    "baseline": "Amourette Pariz Passy: kuchyne z cerstych produktu a nekonecna terasa."
+  },
+  "gallery": {
+    "label": "Atmosfera",
+    "title1": "Duch",
+    "title2": "Mista",
+    "cta": "Vsechny fotografie"
+  },
+  "contact": {
+    "label": "Prakticke informace",
+    "title": "Kontaktujte nas",
+    "subtitle": "Pro soukrome akce nebo skupinove rezervace nas kontaktujte primo.",
+    "bookTable": "Rezervovat stul",
+    "address": "Adresa",
+    "phone": "Telefon",
+    "hours": "Oteviraci doba",
+    "access": "Jak se k nam dostat"
+  },
+  "footer": {
+    "tagline": "Kuchyne ze srdce, autorska vina a sdilene okamziky v 16. obvodu Parize.",
+    "findUs": "Najdete nas",
+    "info": "Informace",
+    "legalNotices": "Pravni informace",
+    "privacy": "Soukromi",
+    "cookies": "Cookies",
+    "accessibility": "Pristupnost",
+    "rights": "Vsechna prava vyhrazena."
+  },
+  "menuPage": {
+    "title": "Jídelní lístek",
+    "subtitle": "Čerstvé suroviny, domácí příprava",
+    "downloadPdf": "Stáhnout menu (PDF)",
+    "categories": {
+      "partager": "K sdílení",
+      "entrees": "Předkrmy",
+      "plats": "Hlavní chody",
+      "desserts": "Sýry a dezerty",
+      "cocktails": "Koktejly"
+    }
+  }
 }

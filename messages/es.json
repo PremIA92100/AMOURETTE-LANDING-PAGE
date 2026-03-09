@@ -1,9 +1,67 @@
 {
-  "nav": { "home": "Inicio", "menu": "Carta", "photos": "Fotografias", "events": "Eventos", "privatisations": "Privatizaciones", "reservation": "Reservar", "contact": "Contacto", "restaurants": "Nuestros restaurantes", "orderOnline": "Pedir en linea" },
-  "hero": { "subtitle": "Paris 16", "discover": "Descubrir" },
-  "about": { "label": "Nuestra Historia", "title1": "Nuestra", "title2": "Filosofia" },
-  "menu": { "label": "Cocina para Compartir", "title": "La Carta", "subtitle": "Cocina sincera y vibrante que evoluciona con las estaciones.", "viewFull": "Ver carta completa", "baseline": "Amourette Paris Passy: cocina de productos frescos y una terraza sin fin." },
-  "gallery": { "label": "Ambiente", "title1": "El Espiritu", "title2": "del Lugar", "cta": "Todas las fotos" },
-  "contact": { "label": "Info Practica", "title": "Contactenos", "subtitle": "Para eventos privados o reservas de grupo, contactenos directamente.", "bookTable": "Reservar mesa", "address": "Direccion", "phone": "Telefono", "hours": "Horarios", "access": "Como llegar" },
-  "footer": { "tagline": "Cocina de corazon, vinos de autor y momentos para compartir en el distrito 16 de Paris.", "findUs": "Encontrarnos", "info": "Informacion", "legalNotices": "Notas legales", "privacy": "Politica de privacidad", "cookies": "Politica de cookies", "accessibility": "Accesibilidad", "rights": "Todos los derechos reservados." }
+  "nav": {
+    "home": "Inicio",
+    "menu": "Carta",
+    "photos": "Fotografias",
+    "events": "Eventos",
+    "privatisations": "Privatizaciones",
+    "reservation": "Reservar",
+    "contact": "Contacto",
+    "restaurants": "Nuestros restaurantes",
+    "orderOnline": "Pedir en linea"
+  },
+  "hero": {
+    "subtitle": "Paris 16",
+    "discover": "Descubrir"
+  },
+  "about": {
+    "label": "Nuestra Historia",
+    "title1": "Nuestra",
+    "title2": "Filosofia"
+  },
+  "menu": {
+    "label": "Cocina para Compartir",
+    "title": "La Carta",
+    "subtitle": "Cocina sincera y vibrante que evoluciona con las estaciones.",
+    "viewFull": "Ver carta completa",
+    "baseline": "Amourette Paris Passy: cocina de productos frescos y una terraza sin fin."
+  },
+  "gallery": {
+    "label": "Ambiente",
+    "title1": "El Espiritu",
+    "title2": "del Lugar",
+    "cta": "Todas las fotos"
+  },
+  "contact": {
+    "label": "Info Practica",
+    "title": "Contactenos",
+    "subtitle": "Para eventos privados o reservas de grupo, contactenos directamente.",
+    "bookTable": "Reservar mesa",
+    "address": "Direccion",
+    "phone": "Telefono",
+    "hours": "Horarios",
+    "access": "Como llegar"
+  },
+  "footer": {
+    "tagline": "Cocina de corazon, vinos de autor y momentos para compartir en el distrito 16 de Paris.",
+    "findUs": "Encontrarnos",
+    "info": "Informacion",
+    "legalNotices": "Notas legales",
+    "privacy": "Politica de privacidad",
+    "cookies": "Politica de cookies",
+    "accessibility": "Accesibilidad",
+    "rights": "Todos los derechos reservados."
+  },
+  "menuPage": {
+    "title": "La Carta",
+    "subtitle": "Productos frescos, hecho en casa",
+    "downloadPdf": "Descargar la carta (PDF)",
+    "categories": {
+      "partager": "Para Compartir",
+      "entrees": "Entrantes",
+      "plats": "Platos Principales",
+      "desserts": "Quesos & Postres",
+      "cocktails": "Cócteles"
+    }
+  }
 }

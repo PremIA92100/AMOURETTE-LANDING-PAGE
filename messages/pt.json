@@ -1,9 +1,67 @@
 {
-  "nav": { "home": "Inicio", "menu": "Cardapio", "photos": "Fotos", "events": "Eventos", "privatisations": "Privatizacoes", "reservation": "Reservar", "contact": "Contacto", "restaurants": "Nossos restaurantes", "orderOnline": "Pedir online" },
-  "hero": { "subtitle": "Paris 16", "discover": "Descobrir" },
-  "about": { "label": "Nossa Historia", "title1": "Nossa", "title2": "Filosofia" },
-  "menu": { "label": "Cozinha de Partilha", "title": "O Cardapio", "subtitle": "Cozinha sincera e vibrante que evolui com as estacoes.", "viewFull": "Ver cardapio completo", "baseline": "Amourette Paris Passy: cozinha de produtos frescos e um terraco sem fim." },
-  "gallery": { "label": "Ambiente", "title1": "O Espirito", "title2": "do Lugar", "cta": "Todas as fotos" },
-  "contact": { "label": "Info Pratica", "title": "Contacte-nos", "subtitle": "Para eventos privados ou reservas de grupo, contacte-nos diretamente.", "bookTable": "Reservar mesa", "address": "Endereco", "phone": "Telefone", "hours": "Horarios", "access": "Como chegar" },
-  "footer": { "tagline": "Cozinha de coracao, vinhos de autor e momentos para partilhar no 16 arrondissement de Paris.", "findUs": "Encontre-nos", "info": "Informacoes", "legalNotices": "Avisos legais", "privacy": "Privacidade", "cookies": "Cookies", "accessibility": "Acessibilidade", "rights": "Todos os direitos reservados." }
+  "nav": {
+    "home": "Inicio",
+    "menu": "Cardapio",
+    "photos": "Fotos",
+    "events": "Eventos",
+    "privatisations": "Privatizacoes",
+    "reservation": "Reservar",
+    "contact": "Contacto",
+    "restaurants": "Nossos restaurantes",
+    "orderOnline": "Pedir online"
+  },
+  "hero": {
+    "subtitle": "Paris 16",
+    "discover": "Descobrir"
+  },
+  "about": {
+    "label": "Nossa Historia",
+    "title1": "Nossa",
+    "title2": "Filosofia"
+  },
+  "menu": {
+    "label": "Cozinha de Partilha",
+    "title": "O Cardapio",
+    "subtitle": "Cozinha sincera e vibrante que evolui com as estacoes.",
+    "viewFull": "Ver cardapio completo",
+    "baseline": "Amourette Paris Passy: cozinha de produtos frescos e um terraco sem fim."
+  },
+  "gallery": {
+    "label": "Ambiente",
+    "title1": "O Espirito",
+    "title2": "do Lugar",
+    "cta": "Todas as fotos"
+  },
+  "contact": {
+    "label": "Info Pratica",
+    "title": "Contacte-nos",
+    "subtitle": "Para eventos privados ou reservas de grupo, contacte-nos diretamente.",
+    "bookTable": "Reservar mesa",
+    "address": "Endereco",
+    "phone": "Telefone",
+    "hours": "Horarios",
+    "access": "Como chegar"
+  },
+  "footer": {
+    "tagline": "Cozinha de coracao, vinhos de autor e momentos para partilhar no 16 arrondissement de Paris.",
+    "findUs": "Encontre-nos",
+    "info": "Informacoes",
+    "legalNotices": "Avisos legais",
+    "privacy": "Privacidade",
+    "cookies": "Cookies",
+    "accessibility": "Acessibilidade",
+    "rights": "Todos os direitos reservados."
+  },
+  "menuPage": {
+    "title": "O Menu",
+    "subtitle": "Produtos frescos, caseiro",
+    "downloadPdf": "Baixar o menu (PDF)",
+    "categories": {
+      "partager": "Para Partilhar",
+      "entrees": "Entradas",
+      "plats": "Pratos Principais",
+      "desserts": "Queijos & Sobremesas",
+      "cocktails": "Cocktails"
+    }
+  }
 }

@@ -10,10 +10,58 @@
     "restaurants": "Unsere Restaurants",
     "orderOnline": "Online bestellen"
   },
-  "hero": { "subtitle": "Paris 16.", "discover": "Entdecken" },
-  "about": { "label": "Unsere Geschichte", "title1": "Unsere", "title2": "Philosophie" },
-  "menu": { "label": "Teilen-Kuche", "title": "Speisekarte", "subtitle": "Aufrichtige und lebendige Kuche, die sich mit den Jahreszeiten entwickelt.", "viewFull": "Vollstandige Karte", "baseline": "Amourette Paris Passy: Frische Produkte und eine endlose Terrasse." },
-  "gallery": { "label": "Ambiente", "title1": "Der Geist", "title2": "des Ortes", "cta": "Alle Fotos" },
-  "contact": { "label": "Praktische Infos", "title": "Kontaktieren Sie uns", "subtitle": "Fur private Veranstaltungen kontaktieren Sie uns bitte direkt.", "bookTable": "Tisch reservieren", "address": "Adresse", "phone": "Telefon", "hours": "Offnungszeiten", "access": "Anfahrt" },
-  "footer": { "tagline": "Herzliche Kuche, Winzerweine und gemeinsame Momente im 16. Arrondissement von Paris.", "findUs": "Finden Sie uns", "info": "Informationen", "legalNotices": "Impressum", "privacy": "Datenschutz", "cookies": "Cookie-Richtlinie", "accessibility": "Barrierefreiheit", "rights": "Alle Rechte vorbehalten." }
+  "hero": {
+    "subtitle": "Paris 16.",
+    "discover": "Entdecken"
+  },
+  "about": {
+    "label": "Unsere Geschichte",
+    "title1": "Unsere",
+    "title2": "Philosophie"
+  },
+  "menu": {
+    "label": "Teilen-Kuche",
+    "title": "Speisekarte",
+    "subtitle": "Aufrichtige und lebendige Kuche, die sich mit den Jahreszeiten entwickelt.",
+    "viewFull": "Vollstandige Karte",
+    "baseline": "Amourette Paris Passy: Frische Produkte und eine endlose Terrasse."
+  },
+  "gallery": {
+    "label": "Ambiente",
+    "title1": "Der Geist",
+    "title2": "des Ortes",
+    "cta": "Alle Fotos"
+  },
+  "contact": {
+    "label": "Praktische Infos",
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Fur private Veranstaltungen kontaktieren Sie uns bitte direkt.",
+    "bookTable": "Tisch reservieren",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "hours": "Offnungszeiten",
+    "access": "Anfahrt"
+  },
+  "footer": {
+    "tagline": "Herzliche Kuche, Winzerweine und gemeinsame Momente im 16. Arrondissement von Paris.",
+    "findUs": "Finden Sie uns",
+    "info": "Informationen",
+    "legalNotices": "Impressum",
+    "privacy": "Datenschutz",
+    "cookies": "Cookie-Richtlinie",
+    "accessibility": "Barrierefreiheit",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "menuPage": {
+    "title": "Die Speisekarte",
+    "subtitle": "Frische Produkte, hausgemacht",
+    "downloadPdf": "Speisekarte herunterladen (PDF)",
+    "categories": {
+      "partager": "Zum Teilen",
+      "entrees": "Vorspeisen",
+      "plats": "Hauptgerichte",
+      "desserts": "Käse & Desserts",
+      "cocktails": "Cocktails"
+    }
+  }
 }

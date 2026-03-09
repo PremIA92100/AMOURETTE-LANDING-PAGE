@@ -51,5 +51,17 @@
     "cookies": "Politique cookies",
     "accessibility": "Accessibilite",
     "rights": "Tous droits reserves."
+  },
+  "menuPage": {
+    "title": "La Carte",
+    "subtitle": "Produits frais, fait maison",
+    "downloadPdf": "Télécharger la carte (PDF)",
+    "categories": {
+      "partager": "Entre Amis",
+      "entrees": "Entrées",
+      "plats": "Plats",
+      "desserts": "Fromages & Desserts",
+      "cocktails": "Cocktails"
+    }
   }
 }

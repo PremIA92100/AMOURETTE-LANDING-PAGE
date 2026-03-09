@@ -51,5 +51,17 @@
     "cookies": "Cookie policy",
     "accessibility": "Accessibility",
     "rights": "All rights reserved."
+  },
+  "menuPage": {
+    "title": "The Menu",
+    "subtitle": "Fresh products, homemade",
+    "downloadPdf": "Download the menu (PDF)",
+    "categories": {
+      "partager": "Sharing Plates",
+      "entrees": "Starters",
+      "plats": "Main Courses",
+      "desserts": "Cheese & Desserts",
+      "cocktails": "Cocktails"
+    }
   }
 }
