@@ -126,9 +126,6 @@ export default function MenuPreview({ locale = 'fr' }: { locale?: Locale }) {
                     {cat.label}
                   </span>
                   <div className="flex items-center gap-3 md:gap-4">
-                    <span className="text-[#D4AF37] text-xs md:text-sm font-medium">
-                      {items.length}
-                    </span>
                     <motion.svg
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.35, ease: easeOutExpo }}

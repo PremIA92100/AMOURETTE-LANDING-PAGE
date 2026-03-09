@@ -7,7 +7,7 @@ import Image from 'next/image'
 const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const aboutText =
-  "Chez Amourette, on cuisine comme on reçoit chez soi. Des produits choisis avec soin, des recettes qui ont du caractère, et cette envie simple de bien faire les choses. Pas de chichi, juste le plaisir de partager un bon moment à table."
+  "Chez Amourette, nous cuisinons comme nous recevons chez nous. Des produits choisis avec soin, des recettes qui ont du caractère, et cette envie simple de bien faire les choses. Le plaisir de partager un bon moment à table."
 
 const aboutWords = aboutText.split(' ')
 
