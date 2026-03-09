@@ -10,17 +10,21 @@ import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 type NavLink = { name: string; href: string }
 
+const deliverooUrl = 'https://deliveroo.fr/fr/menu/paris/Passy/amourette/'
+
 const navByLocale: Record<string, NavLink[]> = {
   fr: [
     { name: 'La Carte', href: '/menus-carte/' },
     { name: 'Photos', href: '/photos/' },
     { name: 'Privatisations', href: '/o/privatisations/' },
+    { name: 'Commander en ligne', href: deliverooUrl },
     { name: 'Contact', href: '/informations-contact/' },
   ],
   en: [
     { name: 'Menu', href: '/en/menus/' },
     { name: 'Photos', href: '/en/photos/' },
     { name: 'Private Events', href: '/en/o/privatisations/' },
+    { name: 'Order online', href: deliverooUrl },
     { name: 'Contact', href: '/en/address-contact/' },
   ],
 }
@@ -121,27 +125,42 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
           >
             {/* Nav links */}
             <nav className="flex flex-col items-center gap-2 md:gap-4">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.1 + i * 0.08,
-                    ease: easeOutExpo,
-                  }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-3xl md:text-5xl font-serif text-stone-800 hover:text-amourette transition-colors duration-300 py-3 md:py-4 block"
+              {navLinks.map((link, i) => {
+                const isExternal = link.href.startsWith('http')
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.1 + i * 0.08,
+                      ease: easeOutExpo,
+                    }}
                   >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    {isExternal ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-3xl md:text-5xl font-serif text-stone-800 hover:text-amourette transition-colors duration-300 py-3 md:py-4 block"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-3xl md:text-5xl font-serif text-stone-800 hover:text-amourette transition-colors duration-300 py-3 md:py-4 block"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </motion.div>
+                )
+              })}
             </nav>
 
             {/* Separator */}
