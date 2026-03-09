@@ -62,7 +62,7 @@ export const restaurantSchema = {
     'https://www.amourette-passy.fr/images/terrasse-vue-aerienne.webp',
   ],
   sameAs: [
-    'https://www.instagram.com/amourettepassy/',
+    'https://www.instagram.com/amourette_paris_passy/',
     'https://www.polo-auteuil.fr/',
   ],
 }

@@ -196,7 +196,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
                   <a href="tel:0952861447" className="hover:text-amourette transition-colors">09 52 86 14 47</a>
                 </div>
                 <div className="flex items-center gap-4 mt-2">
-                  <a href="https://www.instagram.com/amourettepassy/" target="_blank" rel="noopener noreferrer" className="hover:text-amourette transition-colors uppercase tracking-widest text-xs">Instagram</a>
+                  <a href="https://www.instagram.com/amourette_paris_passy/" target="_blank" rel="noopener noreferrer" className="hover:text-amourette transition-colors uppercase tracking-widest text-xs">Instagram</a>
                   <span className="text-stone-300">·</span>
                   <a href="https://www.tripadvisor.fr/Restaurant_Review-g187147-d25182853-Reviews-Amourette_Passy-Paris_Ile_de_France.html" target="_blank" rel="noopener noreferrer" className="hover:text-amourette transition-colors uppercase tracking-widest text-xs">TripAdvisor</a>
                 </div>
@@ -272,7 +272,7 @@ export default function Navbar({ locale = 'fr' }: { locale?: Locale }) {
                   <a href="tel:0952861447" className="hover:text-amourette transition-colors">09 52 86 14 47</a>
                 </div>
                 <div className="flex items-center gap-4 pt-2">
-                  <a href="https://www.instagram.com/amourettepassy/" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-amourette transition-colors uppercase tracking-widest text-xs">Instagram</a>
+                  <a href="https://www.instagram.com/amourette_paris_passy/" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-amourette transition-colors uppercase tracking-widest text-xs">Instagram</a>
                   <span className="text-stone-200">·</span>
                   <a href="https://www.tripadvisor.fr/Restaurant_Review-g187147-d25182853-Reviews-Amourette_Passy-Paris_Ile_de_France.html" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-amourette transition-colors uppercase tracking-widest text-xs">TripAdvisor</a>
                 </div>

@@ -22,7 +22,7 @@ export default function Footer({ locale = 'fr' }: { locale?: Locale }) {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/amourettepassy/"
+                href="https://www.instagram.com/amourette_paris_passy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="md:hover:text-amourette transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center border border-stone-300 rounded-full md:hover:border-amourette"
